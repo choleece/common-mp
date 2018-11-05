@@ -1,0 +1,33 @@
+<import src="../templates/order-item.wxml" />
+<view>
+    <text>收方信息</text>
+    <template is="order-item"/>
+    <text>寄方信息</text>
+    <template is="order-item"/>
+
+    <text>托寄物</text>
+    <input type="text" placeholder="请输入托寄物名称"/>
+    <text>物品重量</text>
+    <input type="text" placeholder="托寄物重量"/>
+    <text>运输方式</text>
+    <label>
+        <radio value="顺丰速运" checked="true"/>
+        <radio value="顺丰冷运" checked="true"/>
+    </label>
+    <text>外包厢选择</text>
+    <label>
+        <radio value="顺丰专运包装" checked="true"/>
+        <radio value="自备" checked="true"/>
+    </label>
+
+    <text>报价金额</text>
+    <input type="text" placeholder="报价金额"/>
+    <text>付款方式</text>
+    <input type="text" placeholder="报价金额"/>
+    <text>月结卡号</text>
+    <input type="text" placeholder="报价金额"/>
+    <text>增值服务</text>
+    <input type="text" placeholder="报价金额"/>
+    <text>条件备注</text>
+    <input type="text" placeholder="报价金额"/>
+</view>

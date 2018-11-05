@@ -1,0 +1,16 @@
+<template name="order-item">
+    <view>
+        <text>寄件人</text>
+        <input type="text" placeholder="请输入寄件人姓名"/>
+        <text>电话号</text>
+        <input type="tel" placeholder="请输入寄件人电话号"/>
+        <text>详细地址</text>
+        <input type="text" placeholder="请输入寄件人详细地址"/>
+    </view>
+    <view class="section__title">省市区选择器</view>
+    <picker mode="region">
+        <view class="picker">
+            当前选择 北京市
+        </view>
+    </picker>
+</template>
