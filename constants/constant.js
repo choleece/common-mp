@@ -20,7 +20,9 @@ const icon_type = {
  */
 const http_method = {
     get: 'GET',
-    post: 'POST'
+    post: 'POST',
+    put: 'PUT',
+    del: 'DELETE'
 };
 
 export { icon_type, http_method };

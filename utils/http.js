@@ -2,6 +2,12 @@ import config from '../constants/config';
 import { icon_type, http_method } from "../constants/constant";
 import tip from './tip';
 
+const queryParams = params => {
+    let str = '';
+    Object.keys(params).forEach(key => str += `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}&`);
+    return str;
+};
+
 /**
  * 基础请求方法
  * @param api 接口地址，接口前不需要/
@@ -14,7 +20,7 @@ const req = (api, method, header, params) => {
     tip.showLoading('加载中...');
     return new Promise((resolve, reject) => {
         wx.request({
-            url: `${config.base_url}${api}`,
+            url: `${config.base_url}${api}?${queryParams(params)}`,
             method: method,
             header: header,
             data: params,
@@ -55,7 +61,6 @@ const getHeader = methodType => {
  * @param sucFunc
  */
 const get = (api, params) => {
-    console.log(api);
     return req(api, http_method.get, getHeader(http_method.get), params);
 };
 
@@ -69,4 +74,12 @@ const post = (api, params) => {
     return req(api, http_method.post, getHeader(http_method.post), params);
 };
 
-export { get, post };
+const put = (api, params) => {
+    return req(api, http_method.put, getHeader(http_method.post), params);
+};
+
+const del = (api, params) => {
+    return req(api, http_method.del, getHeader(http_method.post), params);
+};
+
+export { get, post, put, del };
